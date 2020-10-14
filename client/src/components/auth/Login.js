@@ -1,5 +1,5 @@
-import React, { Fragment, UseState } from 'react';
-import { Link, Redirect } from 'Rect-router-dom';
+import React, { Fragment, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
@@ -65,7 +65,8 @@ Login.propTypes = {
 
 }
 
-const mapStateToProps = state ({
+const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
-})
+});
+
 export default connect(mapStateToProps, { login })(Login);
